@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AzureProject.Models.Employee>
+@{
+    ViewBag.Title = "Employee Detail";
+}
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Employee History", "EmployeeHistory", "Employee")</li>
+    </ul>
+</div>
+<div class="jumbotron">
+    <h3>Employee Details</h3>
+    <div class="jumbotron">
+        <table style="width:100%">
+            <tr>
+                <th style="width:10%">ID</th>
+                <th style="width:30%">Employee Name</th>
+                <th style="width:30%">City</th>
+                <th style="width:30%">Department</th>
+            </tr>
+            @foreach (var employee in @Model)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.City</td>
+                    <td>@employee.Department</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
